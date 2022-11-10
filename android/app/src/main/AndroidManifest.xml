@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.c_flutter_controller_navegacao_e_estados">
+    package="com.example.alura_app">
    <application
-        android:label="c_flutter_controller_navegacao_e_estados"
+        android:label="alura_app"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

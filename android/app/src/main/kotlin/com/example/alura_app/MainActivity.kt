@@ -1,4 +1,4 @@
-package com.example.c_flutter_controller_navegacao_e_estados
+package com.example.alura_app
 
 import io.flutter.embedding.android.FlutterActivity
 

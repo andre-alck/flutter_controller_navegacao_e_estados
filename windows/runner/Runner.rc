@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "c_flutter_controller_navegacao_e_estados" "\0"
+            VALUE "FileDescription", "alura_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "c_flutter_controller_navegacao_e_estados" "\0"
+            VALUE "InternalName", "alura_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2022 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "c_flutter_controller_navegacao_e_estados.exe" "\0"
-            VALUE "ProductName", "c_flutter_controller_navegacao_e_estados" "\0"
+            VALUE "OriginalFilename", "alura_app.exe" "\0"
+            VALUE "ProductName", "alura_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

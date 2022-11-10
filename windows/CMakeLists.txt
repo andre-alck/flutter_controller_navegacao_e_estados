@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(c_flutter_controller_navegacao_e_estados LANGUAGES CXX)
+project(alura_app LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "c_flutter_controller_navegacao_e_estados")
+set(BINARY_NAME "alura_app")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

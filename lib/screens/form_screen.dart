@@ -1,3 +1,4 @@
+import 'package:alura_app/data/task_inherited.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
@@ -111,6 +112,10 @@ class _FormScreenState extends State<FormScreen> {
                     ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
+                            TaskInherited.of(context).newTask(
+                                nameController.text.trim(),
+                                imageController.text.trim(),
+                                int.parse(difficultyController.text.trim()));
                             ScaffoldMessenger.of(context).showSnackBar(
                                 const SnackBar(
                                     content: Text('Nova tarefa salva.')));

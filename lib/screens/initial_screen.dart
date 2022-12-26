@@ -1,4 +1,4 @@
-import 'package:alura_app/components/task.dart';
+import 'package:alura_app/data/task_inherited.dart';
 import 'package:alura_app/screens/form_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,11 +14,7 @@ class _InitialScreenState extends State<InitialScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Tarefas')),
-      body: ListView(children: const [
-        Task('Learn Flutter', 'assets/images/dash.png', 5),
-        Task('Ride a bike', 'assets/images/bike.webp', 2),
-        Task('Meditate', 'assets/images/meditar.jpeg', 5)
-      ]),
+      body: ListView(children: TaskInherited.of(context).taskList),
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {

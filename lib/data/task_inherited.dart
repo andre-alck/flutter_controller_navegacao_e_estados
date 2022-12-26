@@ -6,9 +6,9 @@ class TaskInherited extends InheritedWidget {
       : super(key: key, child: child);
 
   final List<Task> taskList = [
-    const Task('Learn Flutter', 'assets/images/dash.png', 5),
-    const Task('Ride a bike', 'assets/images/bike.webp', 2),
-    const Task('Meditate', 'assets/images/meditar.jpeg', 5)
+    Task('Learn Flutter', 'assets/images/dash.png', 5),
+    Task('Ride a bike', 'assets/images/bike.webp', 2),
+    Task('Meditate', 'assets/images/meditar.jpeg', 5)
   ];
 
   void newTask(String name, String photo, int difficulty) {
@@ -22,7 +22,7 @@ class TaskInherited extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(TaskInherited old) {
-    return old.taskList.length != taskList.length;
+  bool updateShouldNotify(TaskInherited oldWidget) {
+    return oldWidget.taskList.length != taskList.length;
   }
 }

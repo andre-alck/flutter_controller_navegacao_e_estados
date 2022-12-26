@@ -1,5 +1,4 @@
 import 'package:alura_app/data/task_inherited.dart';
-import 'package:alura_app/screens/form_screen.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -18,8 +17,10 @@ class _InitialScreenState extends State<InitialScreen> {
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
-            setState(() => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const FormScreen())));
+            setState(() => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const InitialScreen())));
           }),
     );
   }

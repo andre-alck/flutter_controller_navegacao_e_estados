@@ -2,7 +2,9 @@ import 'package:alura_app/data/task_inherited.dart';
 import 'package:flutter/material.dart';
 
 class FormScreen extends StatefulWidget {
-  const FormScreen({super.key});
+  final BuildContext taskContext;
+
+  const FormScreen({super.key, required this.taskContext});
 
   @override
   State<FormScreen> createState() => _FormScreenState();
@@ -14,6 +16,20 @@ class _FormScreenState extends State<FormScreen> {
   TextEditingController imageController = TextEditingController();
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  bool valueValidator(String? value) {
+    return value != null && value.isEmpty;
+  }
+
+  bool difficultyValidator(String? value) {
+    if (value != null && value.isEmpty) {
+      if (int.parse(value) > 5 || int.parse(value) < 1) {
+        return true;
+      }
+    }
+
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +61,7 @@ class _FormScreenState extends State<FormScreen> {
                             fillColor: Colors.white70,
                             filled: true),
                         validator: (String? value) {
-                          if (value != null && value.isEmpty) {
+                          if (valueValidator(value)) {
                             return 'Insira o nome da Tarefa.';
                           }
                           return null;
@@ -64,9 +80,7 @@ class _FormScreenState extends State<FormScreen> {
                               fillColor: Colors.white70,
                               filled: true),
                           validator: (value) {
-                            if (value!.isEmpty ||
-                                int.parse(value) > 5 ||
-                                int.parse(value) < 1) {
+                            if (difficultyValidator(value)) {
                               return 'Insira uma dificuldade entre 1 e 5.';
                             }
                             return null;
@@ -85,7 +99,7 @@ class _FormScreenState extends State<FormScreen> {
                             fillColor: Colors.white70,
                             filled: true),
                         validator: (value) {
-                          if (value!.isEmpty) {
+                          if (valueValidator(value)) {
                             return 'Insira um URL de Imagem.';
                           }
 
@@ -112,7 +126,7 @@ class _FormScreenState extends State<FormScreen> {
                     ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            TaskInherited.of(context).newTask(
+                            TaskInherited.of(widget.taskContext).newTask(
                                 nameController.text.trim(),
                                 imageController.text.trim(),
                                 int.parse(difficultyController.text.trim()));

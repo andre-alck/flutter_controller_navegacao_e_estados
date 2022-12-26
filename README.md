@@ -1,5 +1,5 @@
 # alura_app
 
-[Curso] Flutter: Widgets, Stateless, Stateful, Imagens e Animações
+[Curso] Flutter: Controller, navegação e estados
 
-![embed](certificado.png)
+![embed](certificado.jpg)
